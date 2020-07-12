@@ -1,5 +1,8 @@
+<!-- Author: Chase M. Duffin -->
 <head>
     <script type="text/javascript">
+        // The time() function subtracts a date object representing your birthday from a date object representing the current time to produce the number of seconds you have been alive.
+        // It then divides that value by the number of seconds in a year (times 1000 to account for default extra precision of Date objects), and updates a given html element.
         function time() {
             var now = new Date(); // generate a new date object for the current time
             const birthday = new Date('October 6, 1995 17:24:00'); // birthday and time, date formatted
@@ -9,6 +12,7 @@
             refresh();
         }
 
+        // The refresh() function calls the time() function at a given interval.
         function refresh() {
             var refresh=1000; // refresh rate in milliseconds
             mytime=setTimeout('time()',refresh)
@@ -17,5 +21,5 @@
 </head>
 
 <body onload=time();>
-    <span id='timer'></span>
+    <span id='timer'></span> <!-- the element on the page to be updated -->
 </body>
